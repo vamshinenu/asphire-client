@@ -1,7 +1,7 @@
 import "../global.css";
-import { Inter } from "@next/font/google";
-import LocalFont from "@next/font/local";
+import {Montserrat} from "next/font/google";
 import { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
 	title: {
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
 		shortcut: "/favicon.png",
 	},
 };
-const inter = Inter({
+
+const inter = Montserrat({
 	subsets: ["latin"],
-	variable: "--font-inter",
 });
 
 
@@ -45,12 +45,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className={[inter.variable].join(" ")}>
+		<html lang="en" className={inter.className}>
 			<body
 				className={`bg-black ${
 					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
 				}`}
 			>
+
 				{children}
 			</body>
 		</html>
