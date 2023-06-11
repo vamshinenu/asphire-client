@@ -49,9 +49,9 @@ export default function Home() {
                 className="hidden h-px w-screen bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 animate-glow animate-fade-right md:block"/>
             <div className="my-16 text-center animate-fade-in">
                 <h2 className="px-4 text-sm text-zinc-500">
-                    is a revolutionary job agency transforming the way you manage your career opportunities. We've
-                    pioneered a unique approach, combining reduced commission rates, unmatched transparency, and
-                    state-of-the-art technology to offer an unrivaled job-seeking experience.
+                    {`is a revolutionary job agency transforming the way you manage your career opportunities. We've
+                        pioneered a unique approach, combining reduced commission rates, unmatched transparency, and
+                        state-of-the-art technology to offer an unrivaled job-seeking experience.`}
                 </h2>
             </div>
             <div className="mx-auto grid w-full grid-cols-1 gap-8 px-20 animate-fade-in sm:mt-0 sm:grid-cols-3 lg:gap-16">

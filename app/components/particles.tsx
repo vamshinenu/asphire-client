@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
-import { useMousePosition } from "@/util/mouse";
+import React, {useEffect, useRef} from "react";
+import {useMousePosition} from "@/util/mouse";
 
 interface ParticlesProps {
 	className?: string;
@@ -188,8 +188,7 @@ export default function Particles({
 
 	const drawParticles = () => {
 		clearContext();
-		const particleCount = quantity;
-		for (let i = 0; i < particleCount; i++) {
+		for (let i = 0; i < quantity; i++) {
 			const circle = circleParams();
 			drawCircle(circle);
 		}
