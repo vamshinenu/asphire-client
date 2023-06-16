@@ -10,6 +10,12 @@ module.exports = {
 
   theme: {
     extend: {
+      textStrokeColor: {
+        white: '#fff',
+      },
+      textStrokeWidth: {
+        DEFAULT: '2px',
+      },
       boxShadow: {
         'emerald-glow': '0 0 5px 2px rgba(5, 150, 105, 0.4)',
       },
@@ -105,9 +111,18 @@ module.exports = {
             opacity: "100%",
           },
         },
+
+
       },
     },
   },
+
+  variants: {
+    extend: {
+      textStroke: ['hover'],
+    },
+  },
+
   plugins: [
     require("@tailwindcss/typography"),
     require("tailwindcss-debug-screens"),

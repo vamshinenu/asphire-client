@@ -2,6 +2,7 @@ import "../global.css";
 import {Montserrat} from "next/font/google";
 import { Metadata } from "next";
 import React from "react";
+import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
 	title: {
@@ -47,12 +48,16 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={inter.className}>
 			<body
-				className={`bg-black ${
+				className={
+				`
+				bg-black flex flex-col min-h-screen justify-between
+				${
 					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
 				}`}
 			>
-
 				{children}
+			<Footer
+				/>
 			</body>
 		</html>
 	);
