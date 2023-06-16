@@ -47,11 +47,14 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={inter.className}>
 			<body
-				className={`bg-black ${
+				// className="flex w-screen flex-col items-center justify-center bg-gradient-to-tl from-black via-zinc-600/20 to-black"
+				className={
+				`
+				bg-black
+				${
 					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
 				}`}
 			>
-
 				{children}
 			</body>
 		</html>
