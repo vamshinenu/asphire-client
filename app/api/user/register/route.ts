@@ -14,7 +14,7 @@ interface IBody {
     stages: any[];
 }
 
-export async function companyUserRegister(req: NextRequest) {
+export async function POST(req: NextRequest) {
 
     const session = await getServerSession(authoptions);
 
@@ -110,78 +110,6 @@ export async function companyUserRegister(req: NextRequest) {
 
     const userId = generateId();
 
-    // const userData = {
-    //     id: userId,
-    //     email,
-    //     role: role as Role,
-    //     name,
-    //     AccessEdu: {
-    //         createMany: {
-    //             data: stageData,
-    //         }
-    //     },
-    // };
-
-    // const candidateEduData = {
-    //     create: {
-    //         stages: {
-    //             createMany: {
-    //                 data: [
-    //                     {
-    //                         message: '',
-    //                         stage: '1',
-    //                         current: true,
-    //                         status: 'pending',
-    //                         id: generateId(),
-    //                         userId: userId,
-    //                     }
-    //                 ]
-    //             }
-    //         },
-    //         companyEdu: {
-    //             connect: {
-    //                 id: currentUser.memberOfCompanyId
-    //             }
-    //         }
-    //     }
-    // };
-
-    // let data: any = {
-    //     ...userData,
-    // }
-
-    // if (_role === 'CANDIDATE') {
-    //     data = {
-    //         ...data,
-    //         CandidateEdu: { ...candidateEduData },
-    //     }
-    // }
-
-
-    // model Stage {
-    //     id     String       @id
-    //     stage  String       @default("1")
-    //     status Stage_Status @default(pending)
-
-    //     actorId String?
-    //     actor   User?   @relation("ACTOR", fields: [actorId], references: [id])
-
-    //     candidateId String
-    //     candidate   User   @relation("CANDIDATE", fields: [candidateId], references: [id])
-
-    //     files    File[]
-    //     messages Message[]
-
-    //     current Boolean @default(false)
-
-    //     createdAt DateTime @default(now())
-
-    //     @@index([actorId])
-    //     @@index([candidateId])
-    //   }
-
-
-
     const user = await prisma.user.create({
 
         data: {
@@ -228,5 +156,3 @@ export async function companyUserRegister(req: NextRequest) {
         { status: 200, statusText: "User created successfully" }
     )
 }
-
-export { companyUserRegister as POST }

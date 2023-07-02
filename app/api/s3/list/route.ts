@@ -1,7 +1,5 @@
 import { ListObjectsCommand, S3Client } from "@aws-sdk/client-s3";
-import { getServerSession } from "next-auth/next";
 import { NextRequest, NextResponse } from "next/server";
-import { authoptions } from "../../auth/[...nextauth]/route";
 
 interface File {
     objectKey: string;

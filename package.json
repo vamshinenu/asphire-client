@@ -11,13 +11,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.363.0",
-    "@aws-sdk/credential-providers": "^3.363.0",
-    "@aws-sdk/hash-node": "^3.357.0",
-    "@aws-sdk/protocol-http": "^3.357.0",
     "@aws-sdk/s3-request-presigner": "^3.363.0",
-    "@aws-sdk/signature-v4-crt": "^3.363.0",
-    "@aws-sdk/url-parser": "^3.357.0",
-    "@aws-sdk/util-format-url": "^3.363.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@google-cloud/storage": "^6.11.0",
@@ -45,10 +39,7 @@
     "react-dom": "18.2.0",
     "react-tooltip": "^5.16.1",
     "sharp": "^0.32.1",
-    "swr": "^2.2.0",
     "tailwindcss": "3.3.2",
-    "tippy": "^0.0.0",
-    "tippy.js": "^6.3.7",
     "typescript": "5.1.6"
   },
   "devDependencies": {

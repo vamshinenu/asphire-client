@@ -18,6 +18,7 @@ const s3Client = new S3Client({
 
 const Bucket = process.env.AWS_BUCKET_NAME as string;
 
+// ? Add a new file to the S3
 export async function POST(req: NextRequest) {
     const formData = await req.formData();
 
@@ -105,6 +106,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: 'File uploaded successfully' });
 }
 
+// ? Delete files from S3 based on objectkey
 export async function DELETE(req: NextRequest) {
 
     const objectKey = req.nextUrl.searchParams.get("objectKey") as string
@@ -127,6 +129,7 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ message: 'File deleted successfully' });
 }
 
+// ? Get a file based on objectKey
 export async function GET(req: NextRequest) {
 
     console.log(req);
