@@ -1,0 +1,76 @@
+"filename", "language", "Properties", "JSON", "TypeScript", "SQL", "Prisma", "TypeScript JSX", "CSS", "JavaScript", "comment", "blank", "total"
+"/Users/va/programming/Projects/asphire-client/.env", "Properties", 19, 0, 0, 0, 0, 0, 0, 0, 0, 10, 29
+"/Users/va/programming/Projects/asphire-client/app/(base)/(all)/about/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 70, 0, 0, 0, 8, 78
+"/Users/va/programming/Projects/asphire-client/app/(base)/(all)/auth/error/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 23, 0, 0, 0, 3, 26
+"/Users/va/programming/Projects/asphire-client/app/(base)/(all)/auth/login/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 44, 0, 0, 0, 12, 56
+"/Users/va/programming/Projects/asphire-client/app/(base)/(all)/contact/layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 18, 0, 0, 0, 1, 19
+"/Users/va/programming/Projects/asphire-client/app/(base)/(all)/contact/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 216, 0, 0, 5, 37, 258
+"/Users/va/programming/Projects/asphire-client/app/(base)/(all)/edu/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 71, 0, 0, 18, 10, 99
+"/Users/va/programming/Projects/asphire-client/app/(base)/(all)/faq/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 9, 0, 0, 0, 1, 10
+"/Users/va/programming/Projects/asphire-client/app/(base)/(all)/job/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 42, 0, 0, 1, 4, 47
+"/Users/va/programming/Projects/asphire-client/app/(base)/(all)/layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 25, 0, 0, 9, 3, 37
+"/Users/va/programming/Projects/asphire-client/app/(base)/layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 64, 0, 0, 4, 9, 77
+"/Users/va/programming/Projects/asphire-client/app/(base)/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 60, 0, 0, 0, 6, 66
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/company/[slug]/error.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 16, 0, 0, 0, 3, 19
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/company/[slug]/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 58, 0, 0, 0, 25, 83
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/company/register/error.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 15
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/company/register/layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 13, 0, 0, 0, 2, 15
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/company/register/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 169, 0, 0, 1, 20, 190
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/dashboard/AdminUserView.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 157, 0, 0, 57, 33, 247
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/dashboard/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 95, 0, 0, 1, 8, 104
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 35, 0, 0, 0, 5, 40
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/[slug]/AdminAndUserFileUpload.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 165, 0, 0, 3, 16, 184
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/[slug]/SubStageFileUpload.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 170, 0, 0, 4, 17, 191
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/[slug]/UploadedFileCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 47, 0, 0, 0, 14, 61
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/[slug]/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 197, 0, 0, 54, 41, 292
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/register/forms.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 214, 0, 0, 0, 23, 237
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/register/layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 14, 0, 0, 0, 1, 15
+"/Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/register/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 42, 0, 0, 0, 12, 54
+"/Users/va/programming/Projects/asphire-client/app/(protected)/layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 63, 0, 0, 0, 5, 68
+"/Users/va/programming/Projects/asphire-client/app/AuthProvider.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 11, 0, 0, 0, 6, 17
+"/Users/va/programming/Projects/asphire-client/app/api/auth/[...nextauth]/route.ts", "TypeScript", 0, 0, 55, 0, 0, 0, 0, 0, 48, 28, 131
+"/Users/va/programming/Projects/asphire-client/app/api/auth/changename/route.ts", "TypeScript", 0, 0, 23, 0, 0, 0, 0, 0, 4, 9, 36
+"/Users/va/programming/Projects/asphire-client/app/api/auth/user/route.ts", "TypeScript", 0, 0, 29, 0, 0, 0, 0, 0, 0, 7, 36
+"/Users/va/programming/Projects/asphire-client/app/api/company/all/route.ts", "TypeScript", 0, 0, 10, 0, 0, 0, 0, 0, 0, 4, 14
+"/Users/va/programming/Projects/asphire-client/app/api/company/register/route.ts", "TypeScript", 0, 0, 64, 0, 0, 0, 0, 0, 32, 17, 113
+"/Users/va/programming/Projects/asphire-client/app/api/company/route.ts", "TypeScript", 0, 0, 20, 0, 0, 0, 0, 0, 0, 7, 27
+"/Users/va/programming/Projects/asphire-client/app/api/contact/education/route.ts", "TypeScript", 0, 0, 43, 0, 0, 0, 0, 0, 0, 10, 53
+"/Users/va/programming/Projects/asphire-client/app/api/contact/job/route.ts", "TypeScript", 0, 0, 46, 0, 0, 0, 0, 0, 0, 9, 55
+"/Users/va/programming/Projects/asphire-client/app/api/edu/company/search/route.ts", "TypeScript", 0, 0, 29, 0, 0, 0, 0, 0, 0, 7, 36
+"/Users/va/programming/Projects/asphire-client/app/api/edu/dashboard/route.ts", "TypeScript", 0, 0, 151, 0, 0, 0, 0, 0, 0, 25, 176
+"/Users/va/programming/Projects/asphire-client/app/api/edu/user/access/route.ts", "TypeScript", 0, 0, 72, 0, 0, 0, 0, 0, 34, 14, 120
+"/Users/va/programming/Projects/asphire-client/app/api/edu/user/register/route.ts", "TypeScript", 0, 0, 128, 0, 0, 0, 0, 0, 59, 43, 230
+"/Users/va/programming/Projects/asphire-client/app/api/register/company/route.ts", "TypeScript", 0, 0, 59, 0, 0, 0, 0, 0, 95, 33, 187
+"/Users/va/programming/Projects/asphire-client/app/api/s3/list/route.ts", "TypeScript", 0, 0, 58, 0, 0, 0, 0, 0, 1, 18, 77
+"/Users/va/programming/Projects/asphire-client/app/api/s3/route.ts", "TypeScript", 0, 0, 128, 0, 0, 0, 0, 0, 3, 41, 172
+"/Users/va/programming/Projects/asphire-client/app/components/AuthNav.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 33, 0, 0, 0, 4, 37
+"/Users/va/programming/Projects/asphire-client/app/components/Buttons.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 20, 0, 0, 0, 2, 22
+"/Users/va/programming/Projects/asphire-client/app/components/DashBoardCard.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 49, 0, 0, 0, 5, 54
+"/Users/va/programming/Projects/asphire-client/app/components/Footer.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 16, 0, 0, 0, 1, 17
+"/Users/va/programming/Projects/asphire-client/app/components/LandingNav.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 41, 0, 0, 1, 4, 46
+"/Users/va/programming/Projects/asphire-client/app/components/Logout.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 13, 0, 0, 0, 1, 14
+"/Users/va/programming/Projects/asphire-client/app/components/UserRegistrationOptions.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/va/programming/Projects/asphire-client/app/components/card.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 37, 0, 0, 0, 6, 43
+"/Users/va/programming/Projects/asphire-client/app/components/changeName.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 25, 0, 0, 0, 7, 32
+"/Users/va/programming/Projects/asphire-client/app/components/client.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 195, 0, 0, 16, 28, 239
+"/Users/va/programming/Projects/asphire-client/app/components/nav.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 50, 0, 0, 0, 5, 55
+"/Users/va/programming/Projects/asphire-client/app/components/particles.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 212, 0, 0, 42, 21, 275
+"/Users/va/programming/Projects/asphire-client/app/constants/features.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 43, 0, 0, 0, 2, 45
+"/Users/va/programming/Projects/asphire-client/app/constants/navigation.ts", "TypeScript", 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 6
+"/Users/va/programming/Projects/asphire-client/app/constants/stages.ts", "TypeScript", 0, 0, 166, 0, 0, 0, 0, 0, 0, 4, 170
+"/Users/va/programming/Projects/asphire-client/app/constants/stateCodes.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 314, 0, 0, 0, 1, 315
+"/Users/va/programming/Projects/asphire-client/app/error.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 20, 0, 0, 0, 1, 21
+"/Users/va/programming/Projects/asphire-client/global.css", "CSS", 0, 0, 0, 0, 0, 0, 18, 0, 0, 3, 21
+"/Users/va/programming/Projects/asphire-client/package.json", "JSON", 0, 69, 0, 0, 0, 0, 0, 0, 0, 1, 70
+"/Users/va/programming/Projects/asphire-client/prisma/migrations/20230620212818_dev/migration.sql", "SQL", 0, 0, 0, 113, 0, 0, 0, 0, 35, 44, 192
+"/Users/va/programming/Projects/asphire-client/prisma/prismaClient.ts", "TypeScript", 0, 0, 3, 0, 0, 0, 0, 0, 0, 2, 5
+"/Users/va/programming/Projects/asphire-client/prisma/schema.prisma", "Prisma", 0, 0, 0, 0, 143, 0, 0, 0, 0, 42, 185
+"/Users/va/programming/Projects/asphire-client/prisma/schema_copy.prisma", "Prisma", 0, 0, 0, 0, 125, 0, 0, 0, 0, 23, 148
+"/Users/va/programming/Projects/asphire-client/sqlscripts/init.sql", "SQL", 0, 0, 0, 4, 0, 0, 0, 0, 0, 1, 5
+"/Users/va/programming/Projects/asphire-client/tailwind.config.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 118, 2, 10, 130
+"/Users/va/programming/Projects/asphire-client/target/npmlist.json", "JSON", 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/va/programming/Projects/asphire-client/util/getCandidates.ts", "TypeScript", 0, 0, 132, 0, 0, 0, 0, 0, 6, 25, 163
+"/Users/va/programming/Projects/asphire-client/util/getRoleOptions.ts", "TypeScript", 0, 0, 56, 0, 0, 0, 0, 0, 0, 8, 64
+"/Users/va/programming/Projects/asphire-client/util/idGenerator.ts", "TypeScript", 0, 0, 6, 0, 0, 0, 0, 0, 0, 1, 7
+"/Users/va/programming/Projects/asphire-client/util/mouse.ts", "TypeScript", 0, 0, 21, 0, 0, 0, 0, 0, 0, 7, 28
+"Total", "-", 19, 70, 1305, 117, 268, 3191, 18, 118, 535, 867, 6508

@@ -1,0 +1,184 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Access {
+  id    Int    @id @default(autoincrement())
+  stage String @default("-1")
+
+  userId String
+  User   User   @relation(fields: [userId], references: [id])
+
+  companyId String
+  company   Company @relation(fields: [companyId], references: [id])
+
+  @@index([companyId])
+  @@index([userId])
+}
+
+model File {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  createdAt DateTime @default(now())
+  subStage  String   @default("NA")
+
+  uploaderId String
+  uploader   User   @relation(fields: [uploaderId], references: [id])
+
+  Stage Stage? @relation(fields: [stageId], references: [id])
+
+  stageId String?
+
+  @@index([uploaderId])
+  @@index([stageId])
+}
+
+model Message {
+  id      Int    @id @default(autoincrement())
+  message String @db.Text
+  userId  String
+
+  User      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+
+  stageId String
+  Stage   Stage  @relation(fields: [stageId], references: [id])
+
+  @@index([stageId])
+  @@index([userId])
+}
+
+model Stage {
+  id     String       @id
+  stage  String       @default("1")
+  status Stage_Status @default(pending)
+
+  actorId String?
+  actor   User?   @relation("ACTOR", fields: [actorId], references: [id])
+
+  candidateId String
+  candidate   User   @relation("CANDIDATE", fields: [candidateId], references: [id])
+
+  files    File[]
+  messages Message[]
+
+  current Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  @@index([actorId])
+  @@index([candidateId])
+}
+
+model User {
+  id            String     @id
+  name          String?
+  bio           String?    @db.Text
+  age           Int?
+  email         String?    @unique
+  password      String?
+  phone         String?    @unique
+  role          User_Role? @default(INT_CANDIDATE)
+  emailVerified DateTime?
+  image         String?
+
+  memberOfCompanyId String
+  memberOfCompany   Company? @relation("MEMBER", fields: [memberOfCompanyId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  actorStages    Stage[] @relation("ACTOR")
+  cadidateStages Stage[] @relation("CANDIDATE")
+
+  createdAt DateTime  @default(now())
+  files     File[]
+  accesses  Access[]
+  Account   Account?
+  Session   Session[]
+  Message   Message[]
+
+  @@index([memberOfCompanyId])
+}
+
+model Company {
+  id        String   @id
+  ownerId   String
+  name      String
+  createdAt DateTime @default(now())
+
+  members User[]   @relation("MEMBER")
+  Access  Access[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Account {
+  id                       String  @id
+  userId                   String  @unique
+  type                     String
+  provider                 String
+  providerAccountId        String
+  refresh_token            String? @db.Text
+  access_token             String? @db.Text
+  expires_at               Int?
+  refresh_token_expires_in Int?
+  token_type               String?
+  scope                    String?
+  id_token                 String? @db.Text
+  session_state            String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model ContactUsEdu {
+  id        String   @id
+  name      String
+  phone     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model ContactUsJob {
+  id        String   @id
+  email     String   @unique
+  phone     String   @unique
+  createdAt DateTime @default(now())
+}
+
+enum Stage_Status {
+  pending
+  progress
+  completed
+}
+
+enum User_Role {
+  EXT_CANDIDATE
+  EXT_ADMIN
+  EXT_USER
+  INT_CANDIDATE
+  INT_ADMIN
+  INT_USER
+}

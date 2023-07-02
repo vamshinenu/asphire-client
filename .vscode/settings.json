@@ -1,0 +1,24 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/.gitignore": true,
+        "**/node_modules": true,
+        "**/.idea": true,
+        "**/.vscode": true,
+        "**/.eslintrc.json": true,
+        "**/package-lock.json": true,
+        "**/next.config.js": true,
+        "**/next-env.d.ts": true,
+        "**/tsconfig.json": true,
+        "**/.next": true,
+        // "**/package.json": true,
+        "**/README.md": true,
+        "**/postcss.config.js": true,
+    },
+    "prisma.fileWatcher": true
+}

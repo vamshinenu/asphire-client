@@ -104,7 +104,7 @@ export default function Particles({
 		const dx = (Math.random() - 0.5) * 0.2;
 		const dy = (Math.random() - 0.5) * 0.2;
 		const magnetism = 0.1 + Math.random() * 4;
-		const color = Math.random() > 0.5 ? 'rgba(255, 255, 255, ' : 'rgba(5, 150, 105, ';  // Half of the particles will have white color, the other half will be emerald.
+		const color = Math.random() > 0.5 ? 'rgba(255,255,255,1)' : 'rgba(5, 150, 105, 1)';  // Half of the particles will have white color, the other half will be emerald.
 		return {
 			x,
 			y,
