@@ -4,7 +4,6 @@ import { use, useEffect, useState } from "react";
 
 // @ts-ignore
 import debounce from 'loadsh/debounce';
-import { Inter } from "next/font/google";
 
 const fetchMap = new Map<string, Promise<any>>();
 

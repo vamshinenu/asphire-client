@@ -50,7 +50,7 @@ export default async function CompanyPage({ params }: { params: { slug: string }
             email: session.user!.email as string
         },
         select: {
-            CompanyEdu: {
+            memberOfCompany: {
                 select: {
                     id: true
                 }
@@ -63,10 +63,10 @@ export default async function CompanyPage({ params }: { params: { slug: string }
 
     if (!_user) return redirect('/auth/login');
 
-    console.log(_user.role !== 'INT_ADMIN_EDU' && _user.CompanyEdu!.id !== company.id);
+    console.log(_user.role !== 'INT_ADMIN' && _user.memberOfCompany!.id !== company.id);
 
 
-    if (_user.role !== 'INT_ADMIN_EDU' && _user.CompanyEdu!.id !== company.id) {
+    if (_user.role !== 'INT_ADMIN' && _user.memberOfCompany!.id !== company.id) {
         throw new Error('You can only access your own company page');
     };
 
