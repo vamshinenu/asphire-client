@@ -94,7 +94,7 @@ export default function AdminUserView() {
 
     let { candidates } = use(
         queryClient(`${pageSize}-${pageNumber}-candidates-${searchTerm}-${sortTerm}`, async () => fetch(
-            `/api/edu/dashboard?pagesize=${pageSize}&pagenumber=${pageNumber}&search=${searchTerm}&sort=${sortTerm}`, {
+            `/api/dashboard?pagesize=${pageSize}&pagenumber=${pageNumber}&search=${searchTerm}&sort=${sortTerm}`, {
             method: 'GET',
         }
         ).then(res => res.json() as Promise<{

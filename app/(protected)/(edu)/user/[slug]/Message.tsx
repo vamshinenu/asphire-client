@@ -35,7 +35,7 @@ export default function Message(
 
         const message = (e.currentTarget.elements[0] as HTMLInputElement).value;
 
-        const res = await fetch(`/api/edu/user/message?stageId=${stageId}`, {
+        const res = await fetch(`/api/user/message?stageId=${stageId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

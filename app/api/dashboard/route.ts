@@ -2,7 +2,7 @@ import prisma from "@/prisma/prismaClient";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
-import { authoptions } from "../../auth/[...nextauth]/route";
+import { authoptions } from "../auth/[...nextauth]/route";
 
 async function getCandidates(req: NextRequest) {
 

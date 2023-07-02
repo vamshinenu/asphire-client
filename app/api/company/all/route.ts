@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
 
-    const companies = prisma.companyEdu.findMany({
+    const companies = prisma.company.findMany({
     });
 
     if (!companies) {

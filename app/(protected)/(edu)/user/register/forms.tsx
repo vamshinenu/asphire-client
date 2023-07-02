@@ -66,7 +66,7 @@ export default function Forms(
 
         console.log(body);
 
-        const res = await fetch('/api/edu/user/register', {
+        const res = await fetch('/api/user/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

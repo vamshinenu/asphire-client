@@ -5,15 +5,19 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
 
 
-    const { name, phone } = await req.json();
+    const { name, phone }: {
+        name: string,
+        phone: string,
+    } = await req.json();
 
     let code;
 
     const response = await prisma.contactUsEdu.create(
         {
+            // @ts-ignore
             data: {
-                name: name,
-                phone: phone,
+                name,
+                phone,
             }
         }
     )

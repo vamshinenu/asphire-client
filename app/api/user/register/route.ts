@@ -2,7 +2,7 @@
 import prisma from "@/prisma/prismaClient";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { authoptions } from "../../../auth/[...nextauth]/route";
+import { authoptions } from "../../auth/[...nextauth]/route";
 import generateId from "@/util/idGenerator";
 import { Role } from "@/util/getRoleOptions";
 

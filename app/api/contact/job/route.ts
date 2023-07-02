@@ -11,6 +11,7 @@ export async function POST(req: NextRequest) {
 
     await prisma.contactUsJob.create(
         {
+            // @ts-ignore
             data: {
                 email,
                 phone,

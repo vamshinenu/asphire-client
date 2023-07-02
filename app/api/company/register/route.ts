@@ -12,7 +12,7 @@ interface Body {
 
 // route to register a company, and a user if they don't exist, and connect them together
 
-export async function EduCompanyRegister(req: NextRequest) {
+export async function POST(req: NextRequest) {
     const { name, ownerName, phone, email }: Body = await req.json();
 
     if (!name || !ownerName || !phone || !email) {
@@ -77,37 +77,4 @@ export async function EduCompanyRegister(req: NextRequest) {
         console.log(e);
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500, statusText: "Internal Server Error" });
     }
-
-
-    // try {
-    //     const companyId = generateId();
-    //     company = await prisma.company.create({
-    //         data: {
-    //             id: companyId,
-    //             name: name,
-    //             ownerId: owner.id,
-    //             members: {
-    //             }
-
-    //         }
-    //     });
-    // }
-    // catch (e) {
-    //     return NextResponse.json({ error: "Internal Server Error" }, { status: 500, statusText: "Internal Server Error" });
-    // }
-    // finally {
-    //     if (company) {
-    //         return NextResponse.json({
-    //             message: "Success",
-    //         },
-    //             {
-    //                 status: 200,
-    //                 statusText: company.id,
-    //             }
-    //         );
-    //     }
-
-    // }
 }
-
-export { EduCompanyRegister as POST }

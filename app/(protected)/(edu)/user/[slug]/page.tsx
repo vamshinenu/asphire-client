@@ -125,7 +125,7 @@ export default async function UserView(
 
     const url = (header.get('x-forwarded-proto') as string) + "://" + (header.get('host') as string)
 
-    let messages = fetch(`${url}/api/edu/user/message?stageId=${stageId}`,
+    let messages = fetch(`${url}/api/user/message?stageId=${stageId}`,
         {
             method: 'GET',
             next: {

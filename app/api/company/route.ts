@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
 
     console.log(`slug from GET: ${slug}`);
 
-    const company = await prisma.companyEdu.findUnique({
+    const company = await prisma.company.findUnique({
         where: {
             id: slug
         },
