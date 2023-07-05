@@ -46,9 +46,7 @@ export default async function RegisterPage() {
     if (options.length === 0) redirect('/auth/error?error=accessdenied');
 
     return (
-        <>
-            <Forms options={options} role={user!.role as Role} />
-        </>
+        <Forms options={options} role={user!.role as Role} />
     )
 
 }

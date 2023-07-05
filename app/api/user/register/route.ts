@@ -125,7 +125,7 @@ export async function POST(req: NextRequest) {
                             id: userId,
                             stage: '1',
                             current: true,
-                            status: 'pending',
+                            status: 'progress',
                         }
                     ]
                 }

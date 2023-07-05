@@ -64,6 +64,7 @@ export async function GET(req: NextRequest) {
             }
         });
 
+        console.log("Files:", files);
 
         return NextResponse.json(files);
 

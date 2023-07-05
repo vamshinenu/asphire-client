@@ -73,8 +73,22 @@ model Stage {
 
   createdAt DateTime @default(now())
 
+  payment Payment?
+
   @@index([actorId])
   @@index([candidateId])
+}
+
+model Payment {
+  id        String   @id
+  stageId   String   @unique
+  stage     Stage    @relation(fields: [stageId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  amount    Int
+  createdAt DateTime @default(now())
+
+  @@index([userId])
 }
 
 model User {
@@ -101,6 +115,7 @@ model User {
   Account   Account?
   Session   Session[]
   Message   Message[]
+  payment   Payment[]
 
   @@index([memberOfCompanyId])
 }

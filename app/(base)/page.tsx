@@ -36,7 +36,7 @@ export default async function Home() {
                     {
                         (session &&
                             <div className="flex flex-row items-center justify-center p-4 duration-500 border divide-x rounded-lg divide-zinc-500 border-zinc-500 hover:rounded-2xl">
-                                <Link href={'/(edu)/dashboard'} className="px-2 duration-500 hover:text-zinc-300">Dashboard</Link>
+                                <Link href={'/dashboard'} className="px-2 duration-500 hover:text-zinc-300">Dashboard</Link>
                                 <div className="px-2">
                                     <Logout />
                                 </div>

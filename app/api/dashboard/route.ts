@@ -135,6 +135,9 @@ async function getCandidates(req: NextRequest) {
                 }
             },
             cadidateStages: {
+                where: {
+                    current: true,
+                },
                 select: {
                     stage: true,
                     status: true,

@@ -4,7 +4,7 @@ import { ArrowUpToLine, X } from 'lucide-react';
 import generateId from '@/util/idGenerator';
 import { useRouter } from 'next/navigation';
 
-export default function SubStageFileUpload({ fileName, candidateId, stage, name }:
+export default function PaymentFileUpload({ fileName, candidateId, stage, name }:
     { fileName: string, candidateId: string, stage: string, name: string }) {
     const [subStage, setSubStage] = React.useState<{ fileName: string; files: File[] }>({
         fileName,
@@ -63,7 +63,7 @@ export default function SubStageFileUpload({ fileName, candidateId, stage, name 
 
         subStage.files.forEach((file, index) => {
             const fileExtension = file.name.split('.').pop();
-            formData.append(`${candidateId}/${stage}/${fileName}_${generateId(4)}_${name.split(' ').at(0)}.${fileExtension}`, file);
+            formData.append(`${candidateId}/${stage}/payment/${fileName}_${generateId(4)}_${name.split(' ').at(0)}.${fileExtension}`, file);
         });
 
         const res = await fetch('/api/s3', {
@@ -85,6 +85,7 @@ export default function SubStageFileUpload({ fileName, candidateId, stage, name 
         }
         // Perform the upload logic here
     };
+
 
 
     return (

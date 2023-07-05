@@ -1,6 +1,5 @@
 "use client";
-import { X } from 'lucide-react';
-import { redirect } from 'next/dist/server/api-utils';
+import { X, FileText } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react'
 

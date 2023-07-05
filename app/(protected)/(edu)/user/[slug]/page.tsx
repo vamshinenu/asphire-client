@@ -7,10 +7,10 @@ import prisma from "@/prisma/prismaClient";
 import SubStageFileUpload from "./SubStageFileUpload";
 import UploadedFileCard from "./UploadedFileCard";
 import { headers } from "next/headers";
-import { Suspense } from "react";
 import Done from "./Done";
 import Message from "./Message";
 import Messages from "./Messages";
+import Payment from "./Payment";
 
 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -49,11 +49,12 @@ export default async function UserView(
     const candidate = await prisma.user.findUnique(
         {
             where: {
-                id: params.slug
+                id: params.slug,
             },
             select: {
                 role: true,
                 name: true,
+                email: true,
                 memberOfCompany: {
                     select: {
                         id: true,
@@ -61,6 +62,9 @@ export default async function UserView(
                     },
                 },
                 cadidateStages: {
+                    where: {
+                        current: true,
+                    },
                     select: {
                         id: true,
                         current: true,
@@ -73,19 +77,6 @@ export default async function UserView(
                                 subStage: true
                             }
                         },
-                        // messages: {
-                        //     select: {
-                        //         id: true,
-                        //         User: {
-                        //             select: {
-                        //                 id: true,
-                        //                 name: true
-                        //             }
-                        //         },
-                        //         message: true,
-                        //         createdAt: true
-                        //     }
-                        // }
                     }
                 }
             }
@@ -105,6 +96,7 @@ export default async function UserView(
 
 
     const isCandidate = currentUser?.role === 'INT_CANDIDATE' || currentUser?.role === 'EXT_CANDIDATE';
+    const isInternal = currentUser?.role === 'INT_ADMIN' || currentUser?.role === 'INT_USER';
 
     console.log(candidate);
 
@@ -119,6 +111,10 @@ export default async function UserView(
     const stageHeader = stages[(stage as unknown as number) - 1].name as string;
     const description = stages[(stage as unknown as number) - 1].description as string;
     const company = candidate?.memberOfCompany?.name as string;
+    const payment = stages[(stage as unknown as number) - 1].payment;
+
+    console.log(candidate?.cadidateStages);
+    console.log(stageId, stage, status, stageHeader, description, company, payment);
     // const messages = candidate?.cadidateStages[0].messages as any[];
 
     const header = headers();
@@ -155,29 +151,52 @@ export default async function UserView(
     )
         .then(res => res.json());
 
+
     const subStages = stages[(stage as unknown as number) - 1].subStage;
 
     // ? parallel data fetching makes it faster
     [candidateFiles, userAdminFiles, messages] = await Promise.all([candidateFiles, userAdminFiles, messages]);
+
+    console.log(candidateFiles, userAdminFiles, messages);
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
             <div className="flex flex-col items-center justify-center max-w-5xl px-4">
                 <h1 className="mb-4 text-2xl font-bold text-center ">{stageHeader} <br /> <span className="text-lg font-normal text-zinc-300">
                     {name} <span className="font-semibold">{company}</span>
+                    {<span className=""> - {candidate?.email}</span>
+                    }
                 </span></h1>
 
                 <h2 className="w-full px-4 py-4 mb-4 text-lg text-center rounded-xl bg-zinc-100">{description}</h2>
+                <div className={`flex flex-row items-center ${isCandidate ? 'justify-center' : 'justify-between'} w-full gap-4 px-4 py-4 mb-4 rounded-lg shadow-lg sm:mx-0 bg-zinc-50 outline outline-1 outline-zinc-200`}>
+                    {isInternal &&
+                        <Done
+                            stageId={stageId}
+                            candidateId={params.slug}
+                            payment={payment}
+                            stage={stage}
+                            name={name}
+                        />}
+                    <p className={`font-normal text-lg text-center  ${status === 'pending' ? 'bg-yellow-400' : 'bg-emerald-400'} px-4 py-2 rounded-3xl`}>
+                        {status}
+                    </p>
 
+                    {
+                        payment && (
+                            <p className={`font-normal text-lg text-center text-emerald-400 px-4 py-2 rounded-3xl`}>
+                                Payment Required
+                            </p>
+                        )
+                    }
+
+                </div>
                 {
                     // @ts-ignore
                     messages.length === 0 &&
                     (
                         <div className="flex flex-row items-center w-full gap-4 px-4 py-4 mb-4 rounded-lg shadow-lg sm:mx-0 bg-zinc-50 outline outline-1 outline-zinc-200">
-                            {!isCandidate && <Done />}
-                            <p className={`font-normal text-lg text-center  ${status === 'pending' ? 'bg-yellow-400' : 'bg-emerald-400'} px-4 py-2 rounded-3xl`}>
-                                {status}
-                            </p>
+
                             <Message stageId={stageId} />
                         </div>
                     )
@@ -190,14 +209,14 @@ export default async function UserView(
                         <div className="flex flex-col w-full p-4 mb-4 rounded-lg bg-zinc-50 ">
                             {/* @ts-ignore */}
                             <Messages messages={messages} userId={currentUser.id} />
-                            <div className="flex flex-row items-center gap-4 px-4 py-4 mb-4 rounded-lg shadow-lg bg-zinc-50 outline outline-1 outline-zinc-200">
-                                {!isCandidate && <Done />}
+                            {/* <div className="flex flex-row items-center gap-4 px-4 py-4 mb-4 rounded-lg shadow-lg bg-zinc-50 outline outline-1 outline-zinc-200"> */}
+                            {/* {!isCandidate && <Done />}
                                 <p className={`font-normal text-lg text-center  ${status === 'pending' ? 'bg-yellow-400' : 'bg-emerald-400'} px-4 py-2 rounded-3xl`}>
                                     {status}
-                                </p>
-                                <Message stageId={stageId} />
-                            </div>
-                            <p className="text-xs text-center text-zinc-300">Refresh to see the new messages</p>
+                                </p> */}
+                            <Message stageId={stageId} />
+                            {/* </div> */}
+                            <p className="mt-4 text-xs text-center text-zinc-300">Refresh to see the new messages</p>
                         </div>
                     )
                 }
@@ -234,7 +253,7 @@ export default async function UserView(
                     )
                 }
                 {
-                    // @ts-ignore
+                    // @ts-ignorenot
                     candidateFiles.length > 0 &&
                     (
                         <div className="flex flex-col items-center grid-flow-col grid-cols-2 mb-4 rounded-xl ">
@@ -243,7 +262,11 @@ export default async function UserView(
                                 <div className="grid grid-cols-1 gap-4 px-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                                     {/* @ts-ignore */}
                                     {candidateFiles?.map((file: File, index: number) => {
-                                        return <UploadedFileCard key={index} file={file} showDelete={currentUser.role === 'EXT_CANDIDATE' || currentUser.role === 'INT_CANDIDATE'} />;
+                                        <>
+
+                                        </>
+
+                                        // return <UploadedFileCard key={index} file={file} showDelete={currentUser.role === 'EXT_CANDIDATE' || currentUser.role === 'INT_CANDIDATE'} />;
                                     })}
                                 </div>
                             }
@@ -252,13 +275,13 @@ export default async function UserView(
                 }
                 {
                     // @ts-ignore
-                    candidateFiles.length > 0 &&
+                    userAdminFiles.length > 0 &&
                     (<div className="flex flex-col items-center grid-flow-col grid-cols-2 mb-4 rounded-xl ">
                         <h1 className="mb-4">Stage Outcome Files <span className="text-xs text-zinc-400">(Click on the file to download)</span></h1>
                         {
                             <div className="grid grid-cols-1 gap-4 px-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                                 {/* @ts-ignore */}
-                                {candidateFiles?.map((file: File, index: number) => {
+                                {userAdminFiles?.map((file: File, index: number) => {
                                     return <UploadedFileCard key={index} file={file} showDelete={(currentUser.role?.includes('USER') || currentUser.role?.includes("ADMIN")) as boolean} />;
                                 })}
                             </div>
@@ -269,7 +292,8 @@ export default async function UserView(
                 or the files that they create in the process of the stage
                 */}
 
+
             </div>
-        </div>
+        </div >
     )
 }

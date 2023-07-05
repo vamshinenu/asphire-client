@@ -93,8 +93,8 @@ export default function CompanyRegisterPage() {
 
 
     return (
-        <form method="post" onSubmit={onSubmit} className="">
-            <div className="max-w-md p-10 pt-8 mt-4 space-y-6 shadow-2xl rounded-2xl outline outline-zinc-900 outline-1">
+        <form method="post" onSubmit={onSubmit} className="px-4">
+            <div className="max-w-md p-10 pt-8 mt-4 space-y-6 shadow-2xl rounded-2xl outline outline-zinc-300 outline-1">
                 <h1 className="mb-4 text-xl text-center text-zinc-500">Company Details</h1>
                 <input
                     id="name"
@@ -108,7 +108,7 @@ export default function CompanyRegisterPage() {
                 />
             </div>
 
-            <div className="max-w-md p-10 pt-8 mt-4 space-y-6 bg-white shadow-2xl rounded-2xl outline outline-zinc-900 outline-1">
+            <div className="max-w-md p-10 pt-8 mt-4 space-y-6 bg-white shadow-2xl rounded-2xl outline outline-zinc-300 outline-1">
                 <h1 className="mb-4 text-xl text-center text-zinc-500">Who Will Manage The Company?</h1>
                 <input
                     id="ownerName"

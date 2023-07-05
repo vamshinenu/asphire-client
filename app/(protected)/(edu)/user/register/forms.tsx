@@ -130,8 +130,8 @@ export default function Forms(
 
 
     return (
-        <form method="post" onSubmit={onSubmit} className="">
-            <div className="max-w-md p-10 pt-8 mt-4 space-y-6 shadow-2xl rounded-2xl outline outline-zinc-900 outline-1">
+        <form method="post" onSubmit={onSubmit} className="px-4">
+            <div className="max-w-md p-10 pt-8 mt-4 space-y-6 shadow-2xl rounded-2xl outline outline-zinc-300 outline-1">
                 <h1 className="mb-4 text-center text-md text-zinc-700">Put the User Details</h1>
                 <input
                     id="name"

@@ -18,58 +18,82 @@ export const authoptions: NextAuthOptions = {
 
     callbacks: {
         async signIn({ account, user }) {
-            const _user = await prisma.user.findFirst({
+            let _user = await prisma.user.findFirst({
                 where: { email: user.email },
             });
 
-            if (_user) {
-                // Find or create the associated account
-                const _account = await prisma.account.findFirst({
-                    where: {
+            if (!_user) {
+                const userId = generateId();
+                const companyId = generateId();
 
-                        userId: _user.id
+                if (user.email === "vamshinenu@gmail.com" || user.email === "vamshikonnoju@gmail.com") {
+                    try {
+                        const _company = await prisma.company.findFirst({
+                            where: { name: "Asphire Education" },
+                        });
+
+                        if (!_company) {
+                            await prisma.company.create({
+                                data: {
+                                    id: companyId,
+                                    name: "Asphire Education",
+                                    ownerId: userId,
+                                },
+                            });
+                        }
+
+                        const newCompanyId = _company ? _company.id : companyId;
+
+                        if (user.email && user.name && user.image) {
+                            _user = await prisma.user.create({
+                                data: {
+                                    id: userId,
+                                    email: user.email,
+                                    name: user.name,
+                                    image: user.image,
+                                    role: "INT_ADMIN",
+                                    memberOfCompanyId: newCompanyId,
+                                },
+                            });
+                        } else {
+                            console.log('Missing user data');
+                            return false;
+                        }
+                    } catch (err) {
+                        console.log(err);
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
+
+            const _account = await prisma.account.findFirst({
+                where: { userId: _user.id },
+            });
+
+            if (!_account) {
+                // If the account doesn't exist, create a new one
+                const accountId = generateId();
+                await prisma.account.create({
+                    data: {
+                        id: accountId,
+                        provider: account!.provider,
+                        providerAccountId: account!.providerAccountId,
+                        type: account!.type,
+                        refresh_token: account?.refresh_token,
+                        access_token: account?.access_token,
+                        expires_at: account?.expires_at,
+                        userId: _user.id,
                     },
                 });
-
-                //   id                       String  @id @default(cuid())
-                //   userId                   String  @unique
-                //   type                     String
-                //   provider                 String
-                //   providerAccountId        String
-                //   refresh_token            String? @db.Text
-                //   access_token             String? @db.Text
-                //   expires_at               Int?
-                //   refresh_token_expires_in Int?
-                //   token_type               String?
-                //   scope                    String?
-                //   id_token                 String? @db.Text
-                //   session_state            String?
-
-
-                if (!_account) {
-                    // If the account doesn't exist, create a new one
-                    const accountId = generateId();
-                    await prisma.account.create({
-                        data: {
-                            id: accountId,
-                            provider: account!.provider,
-                            providerAccountId: account!.providerAccountId,
-                            type: account!.type,
-                            refresh_token: account?.refresh_token,
-                            access_token: account?.access_token,
-                            expires_at: account?.expires_at,
-                            userId: _user.id,
-                        },
-                    });
-                }
-
-                // Allow sign in
-                return true;
             }
-            else {
-                return false;
-            }
+
+            // Allow sign in
+            return true;
         }
+
+
     },
 
     providers: [
