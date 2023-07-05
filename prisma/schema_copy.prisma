@@ -1,0 +1,147 @@
+datasource db {
+    provider          = "postgresql"
+    url               = env("POSTGRES_PRISMA_URL")
+    directUrl         = env("POSTGRES_URL_NON_POOLING")
+    shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model ContactUsEdu {
+    id    String @id @default(cuid())
+    name  String
+    phone String @unique
+
+    createdAt DateTime @default(now())
+}
+
+model ContactUsJob {
+    id    String @id @default(cuid())
+    email String @unique
+    phone String @unique
+
+    createdAt DateTime @default(now())
+}
+
+model CandidateEdu {
+    userId    String @id @unique
+    companyId String
+    stageId   String
+
+    user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+    companyEdu CompanyEdu @relation(fields: [companyId], references: [id], onDelete: Cascade)
+    stageEdu   StageEdu   @relation(fields: [stageId], references: [id], onDelete: Cascade)
+    createdAt  DateTime   @default(now())
+}
+
+model CompanyEdu {
+    id      String @id @default(cuid())
+    name    String
+    ownerId String @unique
+
+    AccessEdu    AccessEdu[]
+    owner        User           @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+    createdAt    DateTime       @default(now())
+    CandidateEdu CandidateEdu[]
+}
+
+model AccessEdu {
+    id        String @id @default(cuid())
+    userId    String
+    companyId String
+    stage     String @default("1")
+
+    companyEdu CompanyEdu @relation(fields: [companyId], references: [id], onDelete: Cascade)
+    user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+    createdAt  DateTime   @default(now())
+}
+
+enum StageStatus {
+    pending
+    progress
+    completed
+}
+
+model StageEdu {
+    id          String      @id @default(cuid())
+    candidateId String
+    ActorId     String
+    stage       String      @default("1")
+    status      StageStatus @default(pending)
+    message     String[]
+
+    actor        User           @relation("Actor", fields: [ActorId], references: [id], onDelete: Cascade)
+    candidate    User           @relation("Candidate", fields: [candidateId], references: [id], onDelete: Cascade)
+    createdAt    DateTime       @default(now())
+    CandidateEdu CandidateEdu[]
+    User         User?          @relation(fields: [userId], references: [id])
+    userId       String?
+}
+
+model Account {
+    id                       String  @id @default(cuid())
+    userId                   String  @unique
+    type                     String
+    provider                 String
+    providerAccountId        String
+    refresh_token            String? @db.Text
+    access_token             String? @db.Text
+    expires_at               Int?
+    refresh_token_expires_in Int?
+    token_type               String?
+    scope                    String?
+    id_token                 String? @db.Text
+    session_state            String?
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@unique([provider, providerAccountId])
+}
+
+model Session {
+    id           String   @id @default(cuid())
+    sessionToken String   @unique
+    userId       String
+    expires      DateTime
+    user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum Role {
+    EXT_CANDIDATE_EDU
+    EXT_ADMIN_EDU
+    EXT_USER_EDU
+    INT_CANDIDATE_EDU
+    INT_ADMIN_EDU
+    INT_USER_EDU
+}
+
+model User {
+    id                String        @id @default(cuid())
+    name              String?
+    bio               String?       @db.Text
+    age               Int?
+    email             String?       @unique
+    password          String?
+    phone             String?       @unique
+    role              Role?         @default(INT_CANDIDATE_EDU)
+    emailVerified     DateTime?
+    image             String?
+    accounts          Account[]
+    sessions          Session[]
+    AccessEdu         AccessEdu[]
+    CompanyEdu        CompanyEdu?
+    CandidateEdu      CandidateEdu?
+    StageEdu          StageEdu[]
+    StageEduActor     StageEdu[]    @relation("Actor")
+    StageEduCandidate StageEdu[]    @relation("Candidate")
+}
+
+model VerificationToken {
+    identifier String
+    token      String   @unique
+    expires    DateTime
+
+    @@unique([identifier, token])
+}

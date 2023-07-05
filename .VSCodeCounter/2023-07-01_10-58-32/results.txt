@@ -1,0 +1,164 @@
+Date : 2023-07-01 10:58:32
+Directory : /Users/va/programming/Projects/asphire-client
+Total : 74 files,  5106 codes, 535 comments, 867 blanks, all 6508 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |         43 |      3,191 |        216 |        414 |      3,821 |
+| TypeScript     |         22 |      1,305 |        282 |        319 |      1,906 |
+| Prisma         |          2 |        268 |          0 |         65 |        333 |
+| JavaScript     |          1 |        118 |          2 |         10 |        130 |
+| SQL            |          2 |        117 |         35 |         45 |        197 |
+| JSON           |          2 |         70 |          0 |          1 |         71 |
+| Properties     |          1 |         19 |          0 |         10 |         29 |
+| CSS            |          1 |         18 |          0 |          3 |         21 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                       | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                          |         74 |      5,106 |        535 |        867 |      6,508 |
+| . (Files)                                                                                                  |          4 |        224 |          2 |         24 |        250 |
+| app                                                                                                        |         60 |      4,278 |        492 |        690 |      5,460 |
+| app (Files)                                                                                                |          2 |         31 |          0 |          7 |         38 |
+| app/(base)                                                                                                 |         11 |        642 |         37 |         94 |        773 |
+| app/(base) (Files)                                                                                         |          2 |        124 |          4 |         15 |        143 |
+| app/(base)/(all)                                                                                           |          9 |        518 |         33 |         79 |        630 |
+| app/(base)/(all) (Files)                                                                                   |          1 |         25 |          9 |          3 |         37 |
+| app/(base)/(all)/about                                                                                     |          1 |         70 |          0 |          8 |         78 |
+| app/(base)/(all)/auth                                                                                      |          2 |         67 |          0 |         15 |         82 |
+| app/(base)/(all)/auth/error                                                                                |          1 |         23 |          0 |          3 |         26 |
+| app/(base)/(all)/auth/login                                                                                |          1 |         44 |          0 |         12 |         56 |
+| app/(base)/(all)/contact                                                                                   |          2 |        234 |          5 |         38 |        277 |
+| app/(base)/(all)/edu                                                                                       |          1 |         71 |         18 |         10 |         99 |
+| app/(base)/(all)/faq                                                                                       |          1 |          9 |          0 |          1 |         10 |
+| app/(base)/(all)/job                                                                                       |          1 |         42 |          1 |          4 |         47 |
+| app/(protected)                                                                                            |         16 |      1,470 |        120 |        225 |      1,815 |
+| app/(protected) (Files)                                                                                    |          1 |         63 |          0 |          5 |         68 |
+| app/(protected)/(edu)                                                                                      |         15 |      1,407 |        120 |        220 |      1,747 |
+| app/(protected)/(edu) (Files)                                                                              |          1 |         35 |          0 |          5 |         40 |
+| app/(protected)/(edu)/company                                                                              |          5 |        271 |          1 |         50 |        322 |
+| app/(protected)/(edu)/company/[slug]                                                                       |          2 |         74 |          0 |         28 |        102 |
+| app/(protected)/(edu)/company/register                                                                     |          3 |        197 |          1 |         22 |        220 |
+| app/(protected)/(edu)/dashboard                                                                            |          2 |        252 |         58 |         41 |        351 |
+| app/(protected)/(edu)/user                                                                                 |          7 |        849 |         61 |        124 |      1,034 |
+| app/(protected)/(edu)/user/[slug]                                                                          |          4 |        579 |         61 |         88 |        728 |
+| app/(protected)/(edu)/user/register                                                                        |          3 |        270 |          0 |         36 |        306 |
+| app/api                                                                                                    |         15 |        915 |        276 |        272 |      1,463 |
+| app/api/auth                                                                                               |          3 |        107 |         52 |         44 |        203 |
+| app/api/auth/[...nextauth]                                                                                 |          1 |         55 |         48 |         28 |        131 |
+| app/api/auth/changename                                                                                    |          1 |         23 |          4 |          9 |         36 |
+| app/api/auth/user                                                                                          |          1 |         29 |          0 |          7 |         36 |
+| app/api/company                                                                                            |          3 |         94 |         32 |         28 |        154 |
+| app/api/company (Files)                                                                                    |          1 |         20 |          0 |          7 |         27 |
+| app/api/company/all                                                                                        |          1 |         10 |          0 |          4 |         14 |
+| app/api/company/register                                                                                   |          1 |         64 |         32 |         17 |        113 |
+| app/api/contact                                                                                            |          2 |         89 |          0 |         19 |        108 |
+| app/api/contact/education                                                                                  |          1 |         43 |          0 |         10 |         53 |
+| app/api/contact/job                                                                                        |          1 |         46 |          0 |          9 |         55 |
+| app/api/edu                                                                                                |          4 |        380 |         93 |         89 |        562 |
+| app/api/edu/company                                                                                        |          1 |         29 |          0 |          7 |         36 |
+| app/api/edu/company/search                                                                                 |          1 |         29 |          0 |          7 |         36 |
+| app/api/edu/dashboard                                                                                      |          1 |        151 |          0 |         25 |        176 |
+| app/api/edu/user                                                                                           |          2 |        200 |         93 |         57 |        350 |
+| app/api/edu/user/access                                                                                    |          1 |         72 |         34 |         14 |        120 |
+| app/api/edu/user/register                                                                                  |          1 |        128 |         59 |         43 |        230 |
+| app/api/register                                                                                           |          1 |         59 |         95 |         33 |        187 |
+| app/api/register/company                                                                                   |          1 |         59 |         95 |         33 |        187 |
+| app/api/s3                                                                                                 |          2 |        186 |          4 |         59 |        249 |
+| app/api/s3 (Files)                                                                                         |          1 |        128 |          3 |         41 |        172 |
+| app/api/s3/list                                                                                            |          1 |         58 |          1 |         18 |         77 |
+| app/components                                                                                             |         12 |        691 |         59 |         85 |        835 |
+| app/constants                                                                                              |          4 |        529 |          0 |          7 |        536 |
+| prisma                                                                                                     |          4 |        384 |         35 |        111 |        530 |
+| prisma (Files)                                                                                             |          3 |        271 |          0 |         67 |        338 |
+| prisma/migrations                                                                                          |          1 |        113 |         35 |         44 |        192 |
+| prisma/migrations/20230620212818_dev                                                                       |          1 |        113 |         35 |         44 |        192 |
+| sqlscripts                                                                                                 |          1 |          4 |          0 |          1 |          5 |
+| target                                                                                                     |          1 |          1 |          0 |          0 |          1 |
+| util                                                                                                       |          4 |        215 |          6 |         41 |        262 |
++------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                   | language       | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /Users/va/programming/Projects/asphire-client/.env                                                         | Properties     |         19 |          0 |         10 |         29 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/(all)/about/page.tsx                              | TypeScript JSX |         70 |          0 |          8 |         78 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/(all)/auth/error/page.tsx                         | TypeScript JSX |         23 |          0 |          3 |         26 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/(all)/auth/login/page.tsx                         | TypeScript JSX |         44 |          0 |         12 |         56 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/(all)/contact/layout.tsx                          | TypeScript JSX |         18 |          0 |          1 |         19 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/(all)/contact/page.tsx                            | TypeScript JSX |        216 |          5 |         37 |        258 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/(all)/edu/page.tsx                                | TypeScript JSX |         71 |         18 |         10 |         99 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/(all)/faq/page.tsx                                | TypeScript JSX |          9 |          0 |          1 |         10 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/(all)/job/page.tsx                                | TypeScript JSX |         42 |          1 |          4 |         47 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/(all)/layout.tsx                                  | TypeScript JSX |         25 |          9 |          3 |         37 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/layout.tsx                                        | TypeScript JSX |         64 |          4 |          9 |         77 |
+| /Users/va/programming/Projects/asphire-client/app/(base)/page.tsx                                          | TypeScript JSX |         60 |          0 |          6 |         66 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/company/[slug]/error.tsx               | TypeScript JSX |         16 |          0 |          3 |         19 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/company/[slug]/page.tsx                | TypeScript JSX |         58 |          0 |         25 |         83 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/company/register/error.tsx             | TypeScript JSX |         15 |          0 |          0 |         15 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/company/register/layout.tsx            | TypeScript JSX |         13 |          0 |          2 |         15 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/company/register/page.tsx              | TypeScript JSX |        169 |          1 |         20 |        190 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/dashboard/AdminUserView.tsx            | TypeScript JSX |        157 |         57 |         33 |        247 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/dashboard/page.tsx                     | TypeScript JSX |         95 |          1 |          8 |        104 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/layout.tsx                             | TypeScript JSX |         35 |          0 |          5 |         40 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/[slug]/AdminAndUserFileUpload.tsx | TypeScript JSX |        165 |          3 |         16 |        184 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/[slug]/SubStageFileUpload.tsx     | TypeScript JSX |        170 |          4 |         17 |        191 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/[slug]/UploadedFileCard.tsx       | TypeScript JSX |         47 |          0 |         14 |         61 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/[slug]/page.tsx                   | TypeScript JSX |        197 |         54 |         41 |        292 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/register/forms.tsx                | TypeScript JSX |        214 |          0 |         23 |        237 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/register/layout.tsx               | TypeScript JSX |         14 |          0 |          1 |         15 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/(edu)/user/register/page.tsx                 | TypeScript JSX |         42 |          0 |         12 |         54 |
+| /Users/va/programming/Projects/asphire-client/app/(protected)/layout.tsx                                   | TypeScript JSX |         63 |          0 |          5 |         68 |
+| /Users/va/programming/Projects/asphire-client/app/AuthProvider.tsx                                         | TypeScript JSX |         11 |          0 |          6 |         17 |
+| /Users/va/programming/Projects/asphire-client/app/api/auth/[...nextauth]/route.ts                          | TypeScript     |         55 |         48 |         28 |        131 |
+| /Users/va/programming/Projects/asphire-client/app/api/auth/changename/route.ts                             | TypeScript     |         23 |          4 |          9 |         36 |
+| /Users/va/programming/Projects/asphire-client/app/api/auth/user/route.ts                                   | TypeScript     |         29 |          0 |          7 |         36 |
+| /Users/va/programming/Projects/asphire-client/app/api/company/all/route.ts                                 | TypeScript     |         10 |          0 |          4 |         14 |
+| /Users/va/programming/Projects/asphire-client/app/api/company/register/route.ts                            | TypeScript     |         64 |         32 |         17 |        113 |
+| /Users/va/programming/Projects/asphire-client/app/api/company/route.ts                                     | TypeScript     |         20 |          0 |          7 |         27 |
+| /Users/va/programming/Projects/asphire-client/app/api/contact/education/route.ts                           | TypeScript     |         43 |          0 |         10 |         53 |
+| /Users/va/programming/Projects/asphire-client/app/api/contact/job/route.ts                                 | TypeScript     |         46 |          0 |          9 |         55 |
+| /Users/va/programming/Projects/asphire-client/app/api/edu/company/search/route.ts                          | TypeScript     |         29 |          0 |          7 |         36 |
+| /Users/va/programming/Projects/asphire-client/app/api/edu/dashboard/route.ts                               | TypeScript     |        151 |          0 |         25 |        176 |
+| /Users/va/programming/Projects/asphire-client/app/api/edu/user/access/route.ts                             | TypeScript     |         72 |         34 |         14 |        120 |
+| /Users/va/programming/Projects/asphire-client/app/api/edu/user/register/route.ts                           | TypeScript     |        128 |         59 |         43 |        230 |
+| /Users/va/programming/Projects/asphire-client/app/api/register/company/route.ts                            | TypeScript     |         59 |         95 |         33 |        187 |
+| /Users/va/programming/Projects/asphire-client/app/api/s3/list/route.ts                                     | TypeScript     |         58 |          1 |         18 |         77 |
+| /Users/va/programming/Projects/asphire-client/app/api/s3/route.ts                                          | TypeScript     |        128 |          3 |         41 |        172 |
+| /Users/va/programming/Projects/asphire-client/app/components/AuthNav.tsx                                   | TypeScript JSX |         33 |          0 |          4 |         37 |
+| /Users/va/programming/Projects/asphire-client/app/components/Buttons.tsx                                   | TypeScript JSX |         20 |          0 |          2 |         22 |
+| /Users/va/programming/Projects/asphire-client/app/components/DashBoardCard.tsx                             | TypeScript JSX |         49 |          0 |          5 |         54 |
+| /Users/va/programming/Projects/asphire-client/app/components/Footer.tsx                                    | TypeScript JSX |         16 |          0 |          1 |         17 |
+| /Users/va/programming/Projects/asphire-client/app/components/LandingNav.tsx                                | TypeScript JSX |         41 |          1 |          4 |         46 |
+| /Users/va/programming/Projects/asphire-client/app/components/Logout.tsx                                    | TypeScript JSX |         13 |          0 |          1 |         14 |
+| /Users/va/programming/Projects/asphire-client/app/components/UserRegistrationOptions.tsx                   | TypeScript JSX |          0 |          0 |          1 |          1 |
+| /Users/va/programming/Projects/asphire-client/app/components/card.tsx                                      | TypeScript JSX |         37 |          0 |          6 |         43 |
+| /Users/va/programming/Projects/asphire-client/app/components/changeName.tsx                                | TypeScript JSX |         25 |          0 |          7 |         32 |
+| /Users/va/programming/Projects/asphire-client/app/components/client.tsx                                    | TypeScript JSX |        195 |         16 |         28 |        239 |
+| /Users/va/programming/Projects/asphire-client/app/components/nav.tsx                                       | TypeScript JSX |         50 |          0 |          5 |         55 |
+| /Users/va/programming/Projects/asphire-client/app/components/particles.tsx                                 | TypeScript JSX |        212 |         42 |         21 |        275 |
+| /Users/va/programming/Projects/asphire-client/app/constants/features.tsx                                   | TypeScript JSX |         43 |          0 |          2 |         45 |
+| /Users/va/programming/Projects/asphire-client/app/constants/navigation.ts                                  | TypeScript     |          6 |          0 |          0 |          6 |
+| /Users/va/programming/Projects/asphire-client/app/constants/stages.ts                                      | TypeScript     |        166 |          0 |          4 |        170 |
+| /Users/va/programming/Projects/asphire-client/app/constants/stateCodes.tsx                                 | TypeScript JSX |        314 |          0 |          1 |        315 |
+| /Users/va/programming/Projects/asphire-client/app/error.tsx                                                | TypeScript JSX |         20 |          0 |          1 |         21 |
+| /Users/va/programming/Projects/asphire-client/global.css                                                   | CSS            |         18 |          0 |          3 |         21 |
+| /Users/va/programming/Projects/asphire-client/package.json                                                 | JSON           |         69 |          0 |          1 |         70 |
+| /Users/va/programming/Projects/asphire-client/prisma/migrations/20230620212818_dev/migration.sql           | SQL            |        113 |         35 |         44 |        192 |
+| /Users/va/programming/Projects/asphire-client/prisma/prismaClient.ts                                       | TypeScript     |          3 |          0 |          2 |          5 |
+| /Users/va/programming/Projects/asphire-client/prisma/schema.prisma                                         | Prisma         |        143 |          0 |         42 |        185 |
+| /Users/va/programming/Projects/asphire-client/prisma/schema_copy.prisma                                    | Prisma         |        125 |          0 |         23 |        148 |
+| /Users/va/programming/Projects/asphire-client/sqlscripts/init.sql                                          | SQL            |          4 |          0 |          1 |          5 |
+| /Users/va/programming/Projects/asphire-client/tailwind.config.js                                           | JavaScript     |        118 |          2 |         10 |        130 |
+| /Users/va/programming/Projects/asphire-client/target/npmlist.json                                          | JSON           |          1 |          0 |          0 |          1 |
+| /Users/va/programming/Projects/asphire-client/util/getCandidates.ts                                        | TypeScript     |        132 |          6 |         25 |        163 |
+| /Users/va/programming/Projects/asphire-client/util/getRoleOptions.ts                                       | TypeScript     |         56 |          0 |          8 |         64 |
+| /Users/va/programming/Projects/asphire-client/util/idGenerator.ts                                          | TypeScript     |          6 |          0 |          1 |          7 |
+| /Users/va/programming/Projects/asphire-client/util/mouse.ts                                                | TypeScript     |         21 |          0 |          7 |         28 |
+| Total                                                                                                      |                |      5,106 |        535 |        867 |      6,508 |
++------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
