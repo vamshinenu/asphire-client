@@ -1,129 +1,76 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./mdx-components.tsx",
-    "content/**/*.mdx",
-  ],
-
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
-      textStrokeColor: {
-        white: '#fff',
-      },
-      textStrokeWidth: {
-        DEFAULT: '2px',
-      },
-      boxShadow: {
-        'emerald-glow': '0 0 5px 2px rgba(5, 150, 105, 0.4)',
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            "code::before": {
-              content: '""',
-            },
-            "code::after": {
-              content: '""',
-            },
-          },
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
-        quoteless: {
-          css: {
-            "blockquote p:first-of-type::before": { content: "none" },
-            "blockquote p:first-of-type::after": { content: "none" },
-          },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
       },
-      fontFamily: {
-        // sans: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
-      },
-      backgroundImage: {
-        "gradient-radial":
-            "radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
-      },
-      animation: {
-        "fade-in": "fade-in 2s ease-in-out forwards",
-        title: "title 1.5s ease-out forwards",
-        "fade-left": "fade-left 3s ease-in-out forwards",
-        "fade-right": "fade-right 3s ease-in-out forwards",
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "fade-in": {
-          "0%": {
-            opacity: "0%",
-          },
-          "75%": {
-            opacity: "0%",
-          },
-          "100%": {
-            opacity: "100%",
-          },
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
-        "fade-left": {
-          "0%": {
-            transform: "translateX(100%)",
-            opacity: "0%",
-          },
-
-          "30%": {
-            transform: "translateX(0%)",
-            opacity: "100%",
-          },
-          "100%": {
-            opacity: "0%",
-          },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
         },
-        "fade-right": {
-          "0%": {
-            transform: "translateX(-100%)",
-            opacity: "0%",
-          },
-
-          "30%": {
-            transform: "translateX(0%)",
-            opacity: "100%",
-          },
-          "100%": {
-            opacity: "0%",
-          },
-        },
-        title: {
-          "0%": {
-            "line-height": "0%",
-            "letter-spacing": "0.25em",
-            opacity: "0",
-          },
-          "25%": {
-            "line-height": "0%",
-            opacity: "0%",
-          },
-          "80%": {
-            opacity: "100%",
-          },
-
-          "100%": {
-            "line-height": "120%",
-            opacity: "100%",
-          },
-        },
-
-
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-
-  variants: {
-    extend: {
-      textStroke: ['hover'],
-    },
-  },
-
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("tailwindcss-debug-screens"),
-  ],
-};
+  plugins: [require("tailwindcss-animate")],
+}

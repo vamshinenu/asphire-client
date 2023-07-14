@@ -9,22 +9,8 @@ export default function InfoLayout({
     return (
         <div
             className="flex flex-col justify-between flex-grow w-full black-gradient">
-            {/* <div>
-                <Navigation />
-                <Particles
-                    className="absolute inset-0 -z-10"
-                    quantity={100} />
-                <div className={'flex pt-20 flex-col items-center'}>
-                    {children}
-                </div>
-            </div> */}
+            <Navigation />
 
-            <div>
-                <Navigation />
-                <Particles
-                    className="absolute inset-0 -z-10"
-                    quantity={100} />
-            </div>
             <div className={'flex-grow flex pt-20 flex-col items-center justify-center'}>
                 {children}
             </div>

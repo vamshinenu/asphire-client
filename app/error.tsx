@@ -9,7 +9,7 @@ export default function GlobalError({
 }) {
     return (
         <html>
-            <body className="flex flex-col items-center justify-center min-h-screen gap-2 text-center bg-black">
+            <body className="flex flex-col items-center justify-center min-h-screen gap-2 text-center">
                 <h2 className="text-xl text-red-500">Something went wrong!</h2>
                 <p className="max-w-xs px-4 py-2 text-sm rounded-xl outline outline-1 outline-gray-800 bg-zinc-900 text-zinc-700">{error.message}</p>
                 <button
