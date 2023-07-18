@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import Footer from "@/app/components/Footer";
 import AuthProvider from "@/app/AuthProvider";
-
+import '../app/globals.css';
 
 
 

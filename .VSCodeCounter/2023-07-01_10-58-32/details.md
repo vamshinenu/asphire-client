@@ -72,7 +72,7 @@ Total : 74 files,  5106 codes, 535 comments, 867 blanks, all 6508 lines
 | [app/constants/stages.ts](/app/constants/stages.ts) | TypeScript | 166 | 0 | 4 | 170 |
 | [app/constants/stateCodes.tsx](/app/constants/stateCodes.tsx) | TypeScript JSX | 314 | 0 | 1 | 315 |
 | [app/error.tsx](/app/error.tsx) | TypeScript JSX | 20 | 0 | 1 | 21 |
-| [global.css](/global.css) | CSS | 18 | 0 | 3 | 21 |
+| [global.css](/globals.css) | CSS | 18 | 0 | 3 | 21 |
 | [package.json](/package.json) | JSON | 69 | 0 | 1 | 70 |
 | [prisma/migrations/20230620212818_dev/migration.sql](/prisma/migrations/20230620212818_dev/migration.sql) | SQL | 113 | 35 | 44 | 192 |
 | [prisma/prismaClient.ts](/prisma/prismaClient.ts) | TypeScript | 3 | 0 | 2 | 5 |
