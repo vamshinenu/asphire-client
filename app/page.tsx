@@ -6,9 +6,9 @@ import Link from "next/link";
 export default async function Home() {
 
     return (
-        <div className="flex flex-col items-center justify-center flex-grow w-full">
+        <div className="flex flex-col items-center flex-grow w-full">
             <Navigation />
-            <h1 className={`font-bold text-black mt-40  sm:text-6xl md:text-9xl`}>
+            <h1 className={`font-bold text-black mt-40 text-6xl md:text-9xl`}>
                 Asphire
             </h1>
 
@@ -22,8 +22,10 @@ export default async function Home() {
                 <h2 className="max-w-4xl px-8 text-sm text-zinc-500 lg:px-16 xl:px-32">
                     {`Empowering Careers, Global Studies Redefined. We revolutionize the way you manage your career and study abroad opportunities. Our innovative approach combines reduced commission rates, unmatched transparency, and state-of-the-art technology, delivering an unparalleled job-seeking experience and comprehensive support for your global study aspirations.`}
                 </h2>
-
             </div>
         </div>
+
+
+
     );
 }

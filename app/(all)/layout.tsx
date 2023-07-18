@@ -1,5 +1,4 @@
 import { Navigation } from "@/app/components/nav";
-import Particles from "@/app/components/particles";
 import React from "react";
 
 
