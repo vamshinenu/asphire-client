@@ -1,5 +1,5 @@
 "use client";
-import {Card} from "../../../components/card";
+import {Card} from "../../components/card";
 
 import {features} from "@/app/constants/features";
 

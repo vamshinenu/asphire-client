@@ -1,9 +1,11 @@
-import "../../global.css";
+import '@/app/globals.css';
 import React from "react";
 import { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import Footer from "@/app/components/Footer";
 import AuthProvider from "@/app/AuthProvider";
+
+
 
 
 import { Analytics } from '@vercel/analytics/react';
@@ -51,20 +53,17 @@ export default async function RootLayout({
     children: React.ReactNode;
 }) {
 
+    // flex flex-col min-h-screen justify-between
     return (
         <AuthProvider>
             <html lang="en" className={inter.className}>
                 <body
                     className={
                         `
-				bg-black flex flex-col min-h-screen justify-between
+                        flex flex-col min-h-screen justify-between
 				${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
                         }`}
                 >
-                    {/* {
-                        status === "authenticated" &&
-                        <h1 className="text-center text-white">Is Logged In</h1>
-                    } */}
                     {children}
                     <Footer
                     />

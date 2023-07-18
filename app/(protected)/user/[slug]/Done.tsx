@@ -10,8 +10,6 @@ export default function Done(
         { candidateId: string, stageId: string, payment: boolean, name: string, stage: string }
 ) {
 
-
-
     const [modalOpen, setModalOpen] = useState(false);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
@@ -136,6 +134,7 @@ export default function Done(
             console.log(res);
             setLoading(false);
             setMessage('');
+            setAmount('');
             closeModal();
             router.refresh();
             return;

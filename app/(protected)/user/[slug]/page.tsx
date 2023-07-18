@@ -94,7 +94,6 @@ export default async function UserView(
         if (candidate?.memberOfCompany?.id !== currentUser?.memberOfCompanyId)
             redirect('/auth/error?error=forbidden&code=CANNOTACCESSUSER',);
 
-
     const isCandidate = currentUser?.role === 'INT_CANDIDATE' || currentUser?.role === 'EXT_CANDIDATE';
     const isInternal = currentUser?.role === 'INT_ADMIN' || currentUser?.role === 'INT_USER';
 
@@ -166,7 +165,8 @@ export default async function UserView(
                     {name} <span className="font-semibold">{company}</span>
                     {<span className=""> - {candidate?.email}</span>
                     }
-                </span></h1>
+                </span>
+                </h1>
 
                 <h2 className="w-full px-4 py-4 mb-4 text-lg text-center rounded-xl bg-zinc-100">{description}</h2>
                 <div className={`flex flex-row items-center ${isCandidate ? 'justify-center' : 'justify-between'} w-full gap-4 px-4 py-4 mb-4 rounded-lg shadow-lg sm:mx-0 bg-zinc-50 outline outline-1 outline-zinc-200`}>
