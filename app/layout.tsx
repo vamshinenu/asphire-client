@@ -1,4 +1,3 @@
-import '@/app/globals.css';
 import React from "react";
 import { Metadata } from "next";
 import { Montserrat } from "next/font/google";
